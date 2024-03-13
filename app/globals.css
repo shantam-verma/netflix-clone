@@ -2,32 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.background-image {
+  background-image: url("../public/images/Login_Bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* This style targets the autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* This style overrides the background color */
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff; /* Change text color to ensure visibility */
+  background-color: var(--input-autofill-bg) !important;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media only screen and (max-width: 640px) {
+  .background-image {
+    background: black;
+    min-height: 100vh;
   }
 }
