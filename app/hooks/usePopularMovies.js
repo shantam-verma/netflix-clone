@@ -17,5 +17,5 @@ export default function usePopularMovies() {
   };
   useEffect(() => {
     !popularMoviesData && getPopularMovies();
-  }, []);
+  }, [popularMoviesData]);
 }

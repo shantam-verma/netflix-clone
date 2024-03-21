@@ -18,5 +18,5 @@ export default function useUpcomingMovies() {
   };
   useEffect(() => {
     !upcomingMoviesData && getUpcomingMovies();
-  }, []);
+  }, [upcomingMoviesData]);
 }

@@ -8,6 +8,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../utils/constant";
 import ShimmerUI from "./ShimmerUI";
+import Link from "next/link";
 
 export default function Cards({ title, images }) {
   if (!images) {
@@ -48,14 +49,17 @@ export default function Cards({ title, images }) {
         // extensions={AutoScroll}
         // aria-label="My Favorite Images"
       >
-        {images?.map((img, index) => (
-          <SplideSlide key={index}>
-            <Image
-              width={200}
-              height={200}
-              src={IMG_CDN_URL + img?.poster_path}
-              alt="logo"
-            />
+        {images?.map((img) => (
+          <SplideSlide key={img?.id}>
+            <Link href={`/${img?.id}`}>
+              <Image
+                className="cursor-pointer hover:animate-pulse"
+                width={200}
+                height={200}
+                src={IMG_CDN_URL + img?.poster_path}
+                alt="logo"
+              />
+            </Link>
           </SplideSlide>
         ))}
       </Splide>

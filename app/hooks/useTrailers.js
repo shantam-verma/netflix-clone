@@ -20,5 +20,5 @@ export default function useTrailers(movieId) {
   };
   useEffect(() => {
     !trailerData && getTrailers();
-  }, []);
+  }, [trailerData]);
 }

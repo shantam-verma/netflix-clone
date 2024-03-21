@@ -18,5 +18,5 @@ export default function useTopRatedMovies() {
   };
   useEffect(() => {
     !topRatedMoviesData && getTopRatedMovies();
-  }, []);
+  }, [topRatedMoviesData]);
 }
