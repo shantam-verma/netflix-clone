@@ -4,14 +4,14 @@ export default function ErrorMessage({ errors, touched }) {
   return (
     <React.Fragment>
       {errors && touched && (
-        <div className="flex gap-1 text-red-800 font-semibold -mt-3">
+        <div className="flex gap-1 text-sm text-red-800 font-medium -mt-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6"
+            className="min-w-5 min-h-5 w-5 h-5"
           >
             <path
               stroke-linecap="round"
